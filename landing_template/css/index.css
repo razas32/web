@@ -145,7 +145,7 @@ hr{
 }
 
 .tw-dark .cta-border-theme{
-    border-color: rgba(123,227,255,0.9);
+    border-color: #dc143c;
 }
 
 .hero-text{
@@ -226,11 +226,11 @@ hr{
 }
 
 .tw-dark .header-logo .logo-light{
-    display: none;
+    display: block;
 }
 
 .tw-dark .header-logo .logo-dark{
-    display: block;
+    display: none;
 }
 
 .famzy-red-gradient-shimmer {
@@ -308,32 +308,60 @@ hr{
     color: #fff;
 }
 
-.tw-dark .header-brand-shimmer{
-    /* Dark mode: light blue / cyan shimmer */
+.hero-brand-shimmer{
     background: linear-gradient(135deg,
-        rgba(232,245,255,0.95) 0%,
-        rgba(191,234,255,1) 25%,
-        rgba(123,227,255,0.95) 50%,
-        rgba(191,234,255,0.95) 75%,
-        rgba(232,245,255,0.9) 100%
+        hsl(var(--famzy-red-dark)) 0%,
+        hsl(var(--famzy-red)) 20%,
+        hsl(var(--famzy-red-light)) 40%,
+        hsl(var(--famzy-red)) 60%,
+        hsl(var(--famzy-red-dark)) 80%,
+        hsl(var(--famzy-red)) 100%
     );
-    background-size: 260% 100%;
-    animation-duration: 4s;
+    background-size: 300% 100%;
+    animation: famzy-enhanced-shimmer 3s ease-in-out infinite;
+    display: inline-block;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent !important;
     -webkit-text-fill-color: transparent !important;
 }
 
+.tw-dark .hero-brand-shimmer{
+    background: linear-gradient(135deg,
+        hsl(var(--famzy-red-dark)) 0%,
+        hsl(var(--famzy-red)) 20%,
+        hsl(var(--famzy-red-light)) 40%,
+        hsl(var(--famzy-red)) 60%,
+        hsl(var(--famzy-red-dark)) 80%,
+        hsl(var(--famzy-red)) 100%
+    );
+    background-size: 300% 100%;
+    animation: famzy-enhanced-shimmer 3s ease-in-out infinite;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.tw-dark .header-brand-shimmer{
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    background: none;
+    animation: none;
+}
+
 .tw-dark .header-cta-shimmer{
     background: linear-gradient(135deg,
-        rgba(232,245,255,0.9) 0%,
-        rgba(191,234,255,0.95) 25%,
-        rgba(123,227,255,0.9) 50%,
-        rgba(191,234,255,0.95) 75%,
-        rgba(232,245,255,0.9) 100%
-    );
-    background-size: 260% 100%;
-    animation-duration: 4s;
-    color: #0b1626;
+        hsl(var(--famzy-red-light)) 0%,
+        hsl(var(--famzy-red)) 25%,
+        hsl(var(--famzy-red-light)) 50%,
+        hsl(var(--famzy-red)) 75%,
+        hsl(var(--famzy-red-light)) 100%)
+    ;
+    background-size: 300% 100%;
+    animation: famzy-enhanced-shimmer 3s ease-in-out infinite;
+    color: #fff;
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -345,11 +373,23 @@ hr{
     }
 
     .tw-dark .header-brand-shimmer{
-        color: transparent !important;
-        -webkit-text-fill-color: transparent !important;
-        -webkit-background-clip: text;
-        background-clip: text;
+        color: #fff !important;
+        -webkit-text-fill-color: #fff !important;
+        -webkit-background-clip: initial;
+        background-clip: initial;
     }
+}
+
+/* Dark mode: solid white title (no shimmer) */
+.tw-dark .header-brand-shimmer{
+    background: none;
+    animation: none;
+    background-size: initial;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-stroke: 0;
 }
 
 .famzy-white-red-shimmer {
@@ -518,28 +558,88 @@ hr{
 
 /* -------------- carousel ------------------*/
 .carousel-container {
-    overflow: hidden;
+    overflow: visible;
     white-space: nowrap;
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
+    padding-bottom: 14px;
 }
   
 .carousel {
-    display: inline-block;
-    animation: scroll 10s linear infinite;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    animation: scroll 20s linear infinite;
 }
   
 .carousel-img {
     display: inline-block;
     margin: 0 20px;
 }
+
+.carousel-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    margin: 0 10px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.04);
+    color: #1f2933;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.carousel-badge i{
+    font-size: 1.05rem;
+}
+
+.carousel-icon-img{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.tw-dark .carousel-badge{
+    background: rgba(255,255,255,0.08);
+    color: #f4f6fb;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.famzy-card{
+    background: hsl(var(--famzy-red) / 0.05) !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    border: 1px solid hsl(var(--famzy-red) / 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.tw-dark .famzy-card{
+    background: hsl(var(--famzy-red) / 0.12) !important;
+    border-color: hsl(var(--famzy-red) / 0.18);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+}
+
+.famzy-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    border-color: hsl(var(--famzy-red) / 0.18);
+    background: hsl(var(--famzy-red) / 0.08) !important;
+}
+
+.tw-dark .famzy-card:hover{
+    background: hsl(var(--famzy-red) / 0.18) !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    border-color: hsl(var(--famzy-red) / 0.26);
+}
   
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0,0,0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translate3d(-50%,0,0);
     }
 }
 
@@ -690,4 +790,21 @@ hr{
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Foundation cards grid responsive */
+.foundation-cards-grid {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+    .foundation-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .foundation-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
