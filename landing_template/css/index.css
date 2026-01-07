@@ -194,6 +194,17 @@ hr{
     animation: sparkle-blink 2s ease-in-out infinite;
 }
 
+/* Reveal-up delay helpers */
+.reveal-delay-1{
+    animation-delay: 0.25s;
+}
+.reveal-delay-2{
+    animation-delay: 0.4s;
+}
+.reveal-delay-3{
+    animation-delay: 0.55s;
+}
+
 @keyframes sparkle-blink{
     0%, 20% { opacity: 0; transform: scale(0.9); }
     40% { opacity: 1; transform: scale(1.05); }
@@ -608,10 +619,23 @@ hr{
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
+/* Thoughtful details cards */
+.thoughtful-card{
+    background: #ffffff;
+    color: #0f1114;
+}
+
+.tw-dark .thoughtful-card{
+    background: #0f1114 !important;
+    color: #f8fafc !important;
+    border-color: #1f2123 !important;
+}
+
 .famzy-card{
     background: hsl(var(--famzy-red) / 0.05) !important;
     box-shadow: 0 6px 12px rgba(0,0,0,0.05);
     border: 1px solid hsl(var(--famzy-red) / 0.1);
+    border-radius: 28px;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
@@ -806,5 +830,47 @@ hr{
 @media (min-width: 1024px) {
     .foundation-cards-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Testimonial cards layout */
+.testimonial-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 210px;
+    width: 100%;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: #0f1114;
+    border: 1px solid #e5e7eb;
+}
+
+.tw-dark .testimonial-card{
+    background: #0f1114 !important;
+    color: #f8fafc !important;
+    border-color: #1f2123 !important;
+}
+
+@media (min-width: 1024px) {
+    .testimonial-container {
+        flex-direction: row !important;
+        padding: 0 3rem;
+        gap: 1rem;
+    }
+    
+    .testimonial-card {
+        width: auto !important;
+        flex: 1;
     }
 }

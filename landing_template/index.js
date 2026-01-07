@@ -248,6 +248,7 @@ sections.forEach((sec) => {
         duration: 0.8,
         y: "0%",
         stagger: 0.2,
+        delay: (i, target) => target.dataset.revealDelay ? parseFloat(target.dataset.revealDelay) : 0
     })
 
 
