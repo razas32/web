@@ -99,6 +99,10 @@ hr{
     border-style: solid;
 }
 
+footer{
+    font-family: 'Poppins', sans-serif;
+}
+
 .animated-collapse{
     transition: width 0.3s ease;
 }
@@ -223,6 +227,11 @@ hr{
     height: 45px;
     flex-shrink: 0;
     position: relative;
+}
+
+.footer-logo{
+    width: 45px;
+    height: 45px;
 }
 
 .header-logo img{
@@ -601,6 +610,8 @@ hr{
     font-weight: 500;
     font-size: 0.95rem;
     box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .carousel-badge i{
@@ -623,6 +634,12 @@ hr{
 .thoughtful-card{
     background: #ffffff;
     color: #0f1114;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thoughtful-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .tw-dark .thoughtful-card{
@@ -631,12 +648,43 @@ hr{
     border-color: #1f2123 !important;
 }
 
+.tw-dark .thoughtful-card:hover{
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+/* Comparison cards - professional, subtle hover */
+.comparison-card{
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s ease;
+    overflow: hidden;
+}
+
+.comparison-card img{
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comparison-card:hover{
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(220, 20, 60, 0.4);
+}
+
+.comparison-card:hover img{
+    transform: scale(1.02);
+}
+
+.tw-dark .comparison-card:hover{
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+    border-color: rgba(220, 20, 60, 0.5);
+}
+
 .famzy-card{
     background: hsl(var(--famzy-red) / 0.05) !important;
     box-shadow: 0 6px 12px rgba(0,0,0,0.05);
     border: 1px solid hsl(var(--famzy-red) / 0.1);
     border-radius: 28px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .tw-dark .famzy-card{
@@ -646,15 +694,15 @@ hr{
 }
 
 .famzy-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
     border-color: hsl(var(--famzy-red) / 0.18);
     background: hsl(var(--famzy-red) / 0.08) !important;
 }
 
 .tw-dark .famzy-card:hover{
     background: hsl(var(--famzy-red) / 0.18) !important;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.5);
     border-color: hsl(var(--famzy-red) / 0.26);
 }
   
@@ -854,12 +902,22 @@ hr{
     background: #ffffff;
     color: #0f1114;
     border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .tw-dark .testimonial-card{
     background: #0f1114 !important;
     color: #f8fafc !important;
     border-color: #1f2123 !important;
+}
+
+.tw-dark .testimonial-card:hover{
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
 }
 
 @media (min-width: 1024px) {
