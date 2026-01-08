@@ -2,16 +2,11 @@
 
 const RESPONSIVE_WIDTH = 1024
 
-let headerWhiteBg = false
 let isHeaderCollapsed = window.innerWidth < RESPONSIVE_WIDTH
 const collapseBtn = document.getElementById("collapse-btn")
 const collapseHeaderItems = document.getElementById("collapsed-header-items")
 const headerEl = document.querySelector("header")
 let headerHeight = headerEl?.offsetHeight || 64
-
-const navToggle = document.querySelector("#nav-dropdown-toggle-0")
-const navDropdown = document.querySelector("#nav-dropdown-list-0")
-const NAV_AVAILABLE = !!(navToggle && navDropdown)
 
 
 function onHeaderClickOutside(e) {
@@ -66,17 +61,9 @@ function responsive() {
 
     if (window.innerWidth > RESPONSIVE_WIDTH) {
         collapseHeaderItems.style.height = ""
-        if (NAV_AVAILABLE){
-            navToggle.addEventListener("mouseenter", openNavDropdown)
-            navToggle.addEventListener("mouseleave", navMouseLeave)
-        }
 
     } else {
         isHeaderCollapsed = true
-        if (NAV_AVAILABLE){
-            navToggle.removeEventListener("mouseenter", openNavDropdown)
-            navToggle.removeEventListener("mouseleave", navMouseLeave)
-        }
     }
 }
 responsive()
@@ -119,63 +106,8 @@ function updateToggleModeBtn(){
 
 
 
-if (NAV_AVAILABLE){
-    navToggle.addEventListener("click", toggleNavDropdown)
-    navDropdown.addEventListener("mouseleave", closeNavDropdown)
-}
-
-function toggleNavDropdown(){
-    if (!NAV_AVAILABLE) return
-
-    if (navDropdown.getAttribute("data-open") === "true"){
-        closeNavDropdown()
-    }else{
-        openNavDropdown()
-    }
-}
-
-function navMouseLeave(){
-    setTimeout(closeNavDropdown, 100)
-}
-
-function openNavDropdown(event){
-    if (!NAV_AVAILABLE) return
-
-    navDropdown.classList.add("tw-opacity-100", "tw-scale-100", 
-                            "max-lg:tw-min-h-[450px]", "max-lg:!tw-h-fit", "tw-min-w-[320px]")
-    
-    navDropdown.setAttribute("data-open", true)
-
-}
-
-function closeNavDropdown(event){
-    if (!NAV_AVAILABLE) return
-
-    // console.log("event target: ", event.target, event.target.contains(navDropdown))
-    
-    if (navDropdown.matches(":hover")){
-        return
-    }
-
-    navDropdown.classList.remove("tw-opacity-100", "tw-scale-100", 
-        "max-lg:tw-min-h-[450px]", "tw-min-w-[320px]", "max-lg:!tw-h-fit",)
-
-    navDropdown.setAttribute("data-open", false)
-
-}
-
-
 const videoBg = document.querySelector("#video-container-bg")
 const videoContainer = document.querySelector("#video-container")
-
-function openVideo(){
-    videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
-    videoBg.classList.add("tw-scale-100", "tw-opacity-100")
-    videoContainer.classList.remove("tw-scale-0")
-    videoContainer.classList.add("tw-scale-100")
-
-    document.body.classList.add("modal-open")
-}
 
 function closeVideo(){
     videoContainer.classList.add("tw-scale-0")

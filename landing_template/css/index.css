@@ -143,12 +143,28 @@ footer{
     font-family: 'Poppins', sans-serif;
 }
 
-.footer-brand{
-    text-align: center;
+.footer-row{
+    justify-content: space-between;
 }
 
 .footer-columns{
     align-items: flex-start;
+}
+
+@media (min-width: 769px){
+    .footer-columns{
+        display: flex !important;
+        margin-left: auto;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    .footer-accordion{
+        display: none !important;
+    }
+}
+
+.footer-brand{
+    text-align: center;
 }
 
 .animated-collapse{
@@ -190,14 +206,6 @@ footer{
 .header-links:hover::after {
     transform: scale(100%);
     opacity: 1;
-}
-
-.cta-border-theme{
-    border: 1px solid #dc143c;
-}
-
-.tw-dark .cta-border-theme{
-    border-color: #dc143c;
 }
 
 .hero-text{
@@ -244,17 +252,6 @@ footer{
 .sparkles-icon .sparkle-star{
     opacity: 0.6;
     animation: sparkle-blink 2s ease-in-out infinite;
-}
-
-/* Reveal-up delay helpers */
-.reveal-delay-1{
-    animation-delay: 0.25s;
-}
-.reveal-delay-2{
-    animation-delay: 0.4s;
-}
-.reveal-delay-3{
-    animation-delay: 0.55s;
 }
 
 @keyframes sparkle-blink{
@@ -416,18 +413,6 @@ footer{
     display: block;
 }
 
-.header-dropdown{
-    top: 96px;
-}
-
-@media (max-width: 1024px){
-    .header-dropdown{
-        top: auto;
-        right: auto;
-        width: 100%;
-    }
-}
-
 .header-logo .logo-dark{
     display: none;
 }
@@ -438,36 +423,6 @@ footer{
 
 .tw-dark .header-logo .logo-dark{
     display: none;
-}
-
-.famzy-red-gradient-shimmer {
-    background: linear-gradient(135deg,
-        hsl(var(--famzy-red-dark)) 0%,
-        hsl(var(--famzy-red)) 20%,
-        hsl(var(--famzy-red-light)) 40%,
-        hsl(var(--famzy-red)) 60%,
-        hsl(var(--famzy-red-dark)) 80%,
-        hsl(var(--famzy-red)) 100%
-    );
-    background-size: 300% 100%;
-    animation: famzy-enhanced-shimmer 3s ease-in-out infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-
-.famzy-red-gradient-shimmer-bg {
-    background: linear-gradient(135deg,
-        hsl(var(--famzy-red-dark)) 0%,
-        hsl(var(--famzy-red)) 20%,
-        hsl(var(--famzy-red-light)) 40%,
-        hsl(var(--famzy-red)) 60%,
-        hsl(var(--famzy-red-dark)) 80%,
-        hsl(var(--famzy-red)) 100%
-    );
-    background-size: 300% 100%;
-    animation: famzy-enhanced-shimmer 3s ease-in-out infinite;
 }
 
 .famzy-btn-shimmer {
@@ -599,35 +554,6 @@ footer{
     -webkit-text-stroke: 0;
 }
 
-.famzy-white-red-shimmer {
-    background: linear-gradient(135deg,
-        rgba(255,255,255,0.95) 0%,
-        rgba(255,255,255,1) 25%,
-        hsl(var(--famzy-red) / 0.25) 50%,
-        rgba(255,255,255,0.9) 75%,
-        hsl(var(--famzy-red) / 0.2) 100%
-    );
-    background-size: 260% 100%;
-    animation: famzy-enhanced-shimmer 4s ease-in-out infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-
-.famzy-white-red-shimmer-bg {
-    background: linear-gradient(135deg,
-        rgba(255,255,255,0.9) 0%,
-        rgba(255,255,255,0.95) 25%,
-        hsl(var(--famzy-red) / 0.18) 50%,
-        rgba(255,255,255,0.92) 75%,
-        hsl(var(--famzy-red) / 0.15) 100%
-    );
-    background-size: 260% 100%;
-    animation: famzy-enhanced-shimmer 4s ease-in-out infinite;
-    color: #0f0f0f;
-}
-
 .hero-section{
     background-image: var(--hero-bg-img);
     background-position: center; /* Center the image */
@@ -640,14 +566,6 @@ footer{
     background: linear-gradient(180deg, var(--hero-gradient) 23%, rgba(0,0,0,0) 87%, var(--hero-gradient) 97%);
 }
 
-
-.gradient-text{
-    background: rgb(215,215,215);
-    background: linear-gradient(90deg, rgba(215,215,215,1) 18%, rgba(136,136,136,1) 71%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 
 .red-bg-grad{
@@ -694,75 +612,6 @@ footer{
     cursor: default;
 }
 
-.input{
-    padding: 10px;
-    background-color: transparent;
-    border-radius: 5px;
-    outline: none;
-    min-width: 100px;
-    border: 1px solid #979797;
-    transition: border 0.3s;
-}
-
-.input:active, .input:focus, .input:focus-within{
-    border: 1px solid var(--input-hover-bd-color) !important;
-}
-
-/* ------------------- scrollbar ------------- */
-.scrollbar::-webkit-scrollbar {
-    width: 5px;
-    height: 20px;
-}
-
-.scrollbar::-webkit-scrollbar-track {
-    border-radius: 25px;
-/* background: #f7f4ed; */
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-    background: #d7d7d7;
-    border-radius: 25px;
-}
-
-
-/* ---------------- dropdown --------------------- */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-.dropdown-toggle {
-    width: 100%;
-    outline: none;
-    /* background-color: #000; */
-    /* border: 1px solid #ccc; */
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    background-color: var(--dropdown-bg);
-    /* border: 1px solid #c9c9c9; */
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-    left: 0px;
-    /* top: 105%; */
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.dropdown-menu li {
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-    background-color: var(--dropdown-hover-bg);
-}
-
 /* -------------- carousel ------------------*/
 .carousel-container {
     overflow: visible;
@@ -779,11 +628,6 @@ footer{
     animation: scroll 20s linear infinite;
 }
   
-.carousel-img {
-    display: inline-block;
-    margin: 0 20px;
-}
-
 .carousel-badge{
     display: inline-flex;
     align-items: center;
@@ -902,43 +746,6 @@ footer{
     }
 }
 
-
-/* ------ animated border ------- */
-
-.animated-border {
-    position: relative;
-    overflow: visible;
-}
-
-
-.animated-border::after{
-    content: '';
-    position: absolute;
-    top: 0px; 
-    left: -100%; 
-    width: 30%;
-    height: 100%;
-    border-radius: inherit; 
-    /* background: linear-gradient(#6366f1 23%, rgba(124,190,255,0) 87%); */
-    background-color: #6366f1;
-    background-repeat: no-repeat;
-    /* background-size: 200% 200%; */
-    background-position: 0% 0%;
-    filter: blur(1.5rem);
-    opacity: 0.8;
-    box-shadow: inset 0px 0px 20px 5px #6366f1;
-    /* transform: rotate(90deg); */
-    z-index: -2;
-    pointer-events: none;
-    animation: slide 10s ease-in-out infinite;
-   
-}
-
-.animated-border::before{
-    filter: blur(1.5rem);
-    opacity: 0.3;
-    will-change: transform;
-}
 
 @keyframes slide{
     0% {
