@@ -6,9 +6,12 @@ let headerWhiteBg = false
 let isHeaderCollapsed = window.innerWidth < RESPONSIVE_WIDTH
 const collapseBtn = document.getElementById("collapse-btn")
 const collapseHeaderItems = document.getElementById("collapsed-header-items")
+const headerEl = document.querySelector("header")
+let headerHeight = headerEl?.offsetHeight || 64
 
 const navToggle = document.querySelector("#nav-dropdown-toggle-0")
 const navDropdown = document.querySelector("#nav-dropdown-list-0")
+const NAV_AVAILABLE = !!(navToggle && navDropdown)
 
 
 function onHeaderClickOutside(e) {
@@ -23,24 +26,31 @@ function onHeaderClickOutside(e) {
 function toggleHeader() {
     if (isHeaderCollapsed) {
         // collapseHeaderItems.classList.remove("max-md:tw-opacity-0")
-        collapseHeaderItems.classList.add("max-lg:!tw-opacity-100", "tw-min-h-[90vh]")
-        collapseHeaderItems.style.height = "90vh"
+        collapseHeaderItems.classList.add("max-lg:!tw-opacity-100", "tw-min-h-[90vh]", "mobile-open")
+        collapseHeaderItems.style.height = `calc(100vh - ${headerHeight}px)`
+        collapseHeaderItems.style.top = `${headerHeight}px`
+        collapseHeaderItems.style.opacity = "1"
+        collapseHeaderItems.style.pointerEvents = "auto"
         collapseBtn.classList.remove("bi-list")
-        collapseBtn.classList.add("bi-x", "max-lg:tw-fixed")
+        collapseBtn.classList.add("bi-x")
         isHeaderCollapsed = false
 
         document.body.classList.add("modal-open")
+        document.documentElement.classList.add("mobile-menu-open")
 
         setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1)
 
     } else {
         collapseHeaderItems.classList.remove("max-lg:!tw-opacity-100", "tw-min-h-[90vh]")
         collapseHeaderItems.style.height = "0vh"
-        
-        collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")  
-        
+        collapseHeaderItems.classList.remove("mobile-open")
+        collapseHeaderItems.style.top = ""
+        collapseHeaderItems.style.opacity = ""
+        collapseHeaderItems.style.pointerEvents = ""
+        collapseBtn.classList.remove("bi-x")  
         collapseBtn.classList.add("bi-list")
         document.body.classList.remove("modal-open")
+        document.documentElement.classList.remove("mobile-menu-open")
 
         isHeaderCollapsed = true
         window.removeEventListener("click", onHeaderClickOutside)
@@ -49,19 +59,24 @@ function toggleHeader() {
 }
 
 function responsive() {
+    headerHeight = headerEl?.offsetHeight || 64
     if (!isHeaderCollapsed){
         toggleHeader()
     }
 
     if (window.innerWidth > RESPONSIVE_WIDTH) {
         collapseHeaderItems.style.height = ""
-        navToggle.addEventListener("mouseenter", openNavDropdown)
-        navToggle.addEventListener("mouseleave", navMouseLeave)
+        if (NAV_AVAILABLE){
+            navToggle.addEventListener("mouseenter", openNavDropdown)
+            navToggle.addEventListener("mouseleave", navMouseLeave)
+        }
 
     } else {
         isHeaderCollapsed = true
-        navToggle.removeEventListener("mouseenter", openNavDropdown)
-        navToggle.removeEventListener("mouseleave", navMouseLeave)
+        if (NAV_AVAILABLE){
+            navToggle.removeEventListener("mouseenter", openNavDropdown)
+            navToggle.removeEventListener("mouseleave", navMouseLeave)
+        }
     }
 }
 responsive()
@@ -104,10 +119,13 @@ function updateToggleModeBtn(){
 
 
 
-navToggle.addEventListener("click", toggleNavDropdown)
-navDropdown.addEventListener("mouseleave", closeNavDropdown)
+if (NAV_AVAILABLE){
+    navToggle.addEventListener("click", toggleNavDropdown)
+    navDropdown.addEventListener("mouseleave", closeNavDropdown)
+}
 
 function toggleNavDropdown(){
+    if (!NAV_AVAILABLE) return
 
     if (navDropdown.getAttribute("data-open") === "true"){
         closeNavDropdown()
@@ -121,6 +139,7 @@ function navMouseLeave(){
 }
 
 function openNavDropdown(event){
+    if (!NAV_AVAILABLE) return
 
     navDropdown.classList.add("tw-opacity-100", "tw-scale-100", 
                             "max-lg:tw-min-h-[450px]", "max-lg:!tw-h-fit", "tw-min-w-[320px]")
@@ -130,6 +149,7 @@ function openNavDropdown(event){
 }
 
 function closeNavDropdown(event){
+    if (!NAV_AVAILABLE) return
 
     // console.log("event target: ", event.target, event.target.contains(navDropdown))
     

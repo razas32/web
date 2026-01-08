@@ -57,196 +57,62 @@
         </div> -->
 
         <header
-            class="lg:tw-px-4 tw-max-w-[100vw] tw-max-w-lg:tw-mr-auto max-lg:tw-top-0 tw-fixed tw-top-4 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full
-                    tw-text-gray-700 tw-bg-white dark:tw-text-gray-200 dark:tw-bg-[#17181b] tw-px-[3%] tw-rounded-md lg:tw-max-w-5xl tw-shadow-md dark:tw-shadow-gray-700
-                    lg:tw-justify-between lg:tw-opacity-[0.99]"
+            class="tw-fixed tw-top-0 tw-left-0 tw-w-full tw-bg-transparent dark:tw-bg-transparent tw-border-b tw-border-black/5 dark:tw-border-white/10 tw-shadow-sm tw-z-50 glass-header"
         >
-            <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="#">
-               
-
-                <div class="header-logo">
-                    <img
-                        src="./assets/logo/famzy-logo.png"
-                        alt="Famzy logo"
-                        class="tw-object-contain tw-h-full tw-w-full logo-light"
-                    />
-                    <img
-                        src="./assets/logo/famzy-logo-dark.png"
-                        alt="Famzy logo dark"
-                        class="tw-object-contain tw-h-full tw-w-full logo-dark"
-                    />
-                </div>
-                <span class="tw-text-xl header-brand-shimmer" style="font-family: 'Poppins', sans-serif; font-weight: 700;">Famzy</span>
-            </a>
-            <div
-                class="collapsible-header animated-collapse max-lg:tw-shadow-md lg:!tw-ml-auto lg:tw-flex lg:!tw-justify-end"
-                id="collapsed-header-items"
-            >
-                <nav
-                    class="tw-relative tw-flex tw-h-full max-lg:tw-h-max tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col
-                                max-lg:tw-gap-5 tw-place-items-center"
-                >
-                    <a class="header-links" href="#about">About</a>
-
-                    <div class="tw-relative tw-flex tw-flex-col tw-place-items-center">
-                        <div id="nav-dropdown-toggle-0" class="max-lg:tw-max-w-fit tw-flex header-links tw-gap-1  tw-place-items-center">
-                            <span class=""> Features </span>
-                            <i class="tw-text-sm bi bi-chevron-down"></i>
-                        </div>
-                        <nav id="nav-dropdown-list-0"
-                            data-open="false"
-                            class="tw-scale-0 tw-opacity-0  lg:tw-fixed tw-flex lg:tw-top-[80px] lg:tw-left-1/2 lg:tw--translate-x-1/2
-                                    tw-w-[90%] tw-rounded-lg max-lg:tw-h-0 max-lg:tw-w-0
-                                    lg:tw-h-auto lg:tw-max-h-[600px] tw-overflow-hidden
-                                     tw-bg-white dark:tw-bg-[#17181B] tw-duration-300
-                                     tw-transition-opacity tw-transition-height tw-shadow-lg tw-p-4">
-                            <div class="tw-grid max-xl:tw-flex max-xl:tw-flex-col tw-justify-around tw-grid-cols-2 tw-w-full">
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl tw-flex tw-items-center">
-                                        <svg class="sparkles-icon feature-icon feature-icon-ruby" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path class="sparkle-main" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
-                                            <path class="sparkle-star" d="M20 3v4"></path>
-                                            <path class="sparkle-star" d="M22 5h-4"></path>
-                                            <path class="sparkle-star" d="M4 17v2"></path>
-                                            <path class="sparkle-star" d="M5 18H3"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">Ruby AI </div>
-                                        <p>Your personal AI family assistant</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-calendar-check feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">Calendar </div>
-                                        <p class="">Shared family calendar and scheduling</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-geo-alt feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">Locations </div>
-                                        <p class="">Real-time tracking and safety alerts</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-images feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">
-                                            Gallery
-                                        </div>
-                                        <p class="">Family photos and memories</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-chat-dots feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">
-                                            Chat
-                                        </div>
-                                        <p class="">Secure family messaging</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-cart3 feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">
-                                            Carts
-                                        </div>
-                                        <p class="">Lists, grocery, Christmas, and more</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-list-check feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">
-                                            Tasks
-                                        </div>
-                                        <p class="">Chore management and tracking</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-cash-coin feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">
-                                            Allowance
-                                        </div>
-                                        <p class="">Smart reward and allowance system</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-file-earmark-text feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">
-                                            Documents
-                                        </div>
-                                        <p class="">Secure family document vault</p>
-                                    </div>
-                                </a>
-
-                                <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#">
-                                    <div class="tw-font-semibold tw-text-3xl">
-                                        <i class="bi bi-controller feature-icon"></i>
-                                    </div>
-                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                        <div class="tw-text-lg tw-text-black dark:tw-text-white tw-font-medium">
-                                            Games
-                                        </div>
-                                        <p class="">Coming soon</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </nav>
+            <div class="tw-flex tw-items-center tw-justify-between tw-w-full tw-max-w-6xl tw-mx-auto tw-px-4 lg:tw-pl-16 lg:tw-pr-8 tw-py-3 tw-gap-4">
+                <a class="tw-flex tw-gap-2 tw-items-center tw-min-w-0 brand-offset" href="#">
+                    <div class="header-logo">
+                        <img
+                            src="./assets/logo/famzy-logo.png"
+                            alt="Famzy logo"
+                            class="tw-object-contain tw-h-full tw-w-full logo-light"
+                        />
+                        <img
+                            src="./assets/logo/famzy-logo-dark.png"
+                            alt="Famzy logo dark"
+                            class="tw-object-contain tw-h-full tw-w-full logo-dark"
+                        />
                     </div>
+                    <span class="tw-text-2xl header-brand-shimmer brand-text" style="font-family: 'Poppins', sans-serif; font-weight: 700;">Famzy</span>
+                </a>
 
-                    <a
-                        href="#"
-                        aria-label="Free Download"
-                        class="btn header-cta-shimmer famzy-btn-shimmer tw-flex tw-gap-3 tw-px-3 tw-py-2 tw-transition-transform
-                                    tw-duration-[0.3s] hover:tw-translate-x-2"
+                <button
+                    class="bi bi-list lg:tw-hidden tw-ml-auto tw-p-2 tw-rounded-lg tw-text-3xl tw-text-gray-700 dark:tw-text-gray-200 hover:tw-bg-gray-100 dark:hover:tw-bg-gray-800 tw-transition"
+                    onclick="toggleHeader()"
+                    aria-label="menu"
+                    id="collapse-btn"
+                    type="button"
+                ></button>
+
+                <div
+                    class="collapsible-header animated-collapse tw-flex tw-items-center tw-gap-5 tw-transition-all tw-duration-300 lg:tw-ml-auto lg:tw-static lg:tw-h-auto lg:tw-w-auto lg:tw-bg-transparent lg:tw-shadow-none lg:tw-opacity-100 max-lg:tw-absolute max-lg:tw-top-full max-lg:tw-left-0 max-lg:tw-right-0 max-lg:tw-w-full max-lg:tw-overflow-hidden max-lg:tw-bg-white max-lg:dark:tw-bg-[#0f0f10] max-lg:tw-backdrop-blur-xl max-lg:tw-shadow-2xl max-lg:tw-rounded-b-2xl max-lg:tw-opacity-0 max-lg:tw-h-0 lg:tw-z-auto max-lg:tw-z-40"
+                    id="collapsed-header-items"
+                >
+                    <nav
+                        class="tw-relative tw-flex tw-items-center tw-h-full max-lg:tw-h-max tw-w-full tw-gap-5 tw-text-base max-lg:tw-flex-col max-lg:tw-items-start max-lg:tw-px-6 max-lg:tw-py-6"
                     >
-                        <span>Free Download</span>
-                        <i class="bi bi-apple"></i>
-                    </a>
+                        <a class="header-links" href="#about">About</a>
 
-                    <button type="button" onclick="toggleMode()" class="header-links tw-text-gray-600 dark:tw-text-gray-300" title="toggle-theme"
-                            id="theme-toggle">
-                        <i class="bi bi-sun" id="toggle-mode-icon"></i>
-                    </button>
+                        <a class="header-links" href="#features">Features</a>
 
-                </nav>
+                        <a
+                            href="#"
+                            aria-label="Free Download"
+                            class="btn header-cta-shimmer famzy-btn-shimmer tw-flex tw-gap-3 tw-px-3 tw-py-2 tw-transition-transform
+                                        tw-duration-[0.3s] hover:tw-translate-x-2"
+                        >
+                            <span>Free Download</span>
+                            <i class="bi bi-apple"></i>
+                        </a>
+
+                        <button type="button" onclick="toggleMode()" class="header-links tw-text-gray-600 dark:tw-text-gray-300" title="toggle-theme"
+                                id="theme-toggle">
+                            <i class="bi bi-sun" id="toggle-mode-icon"></i>
+                        </button>
+
+                    </nav>
+                </div>
             </div>
-            <button
-                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-gray-500 lg:tw-hidden"
-                onclick="toggleHeader()"
-                aria-label="menu"
-                id="collapse-btn"
-            ></button>
         </header>
 
         <section
@@ -762,7 +628,7 @@
                         <p class="tw-text-gray-700 dark:tw-text-gray-100 tw-text-base tw-leading-relaxed">
                             Everyone sees what they need - nothing more. Set clear roles for parents, kids, and caregivers, with control that adapts as your family grows.
                         </p>
-                        <a href="#" class="tw-text-blue-600 dark:tw-text-blue-400 tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
+                        <a href="#" class="tw-text-[#dc143c] dark:tw-text-[#dc143c] tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
                             Learn more <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -778,7 +644,7 @@
                         <p class="tw-text-gray-700 dark:tw-text-gray-100 tw-text-base tw-leading-relaxed">
                             Helpful nudges, not constant noise. Get reminders at the right time, in the right context - without overwhelm.
                         </p>
-                        <a href="#" class="tw-text-blue-600 dark:tw-text-blue-400 tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
+                        <a href="#" class="tw-text-[#dc143c] dark:tw-text-[#dc143c] tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
                             Learn more <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -794,7 +660,7 @@
                         <p class="tw-text-gray-700 dark:tw-text-gray-100 tw-text-base tw-leading-relaxed">
                             Bring everything together, effortlessly. Import calendars, files, and important information so nothing gets lost across apps.
                         </p>
-                        <a href="#" class="tw-text-blue-600 dark:tw-text-blue-400 tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
+                        <a href="#" class="tw-text-[#dc143c] dark:tw-text-[#dc143c] tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
                             Learn more <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -810,7 +676,7 @@
                         <p class="tw-text-gray-700 dark:tw-text-gray-100 tw-text-base tw-leading-relaxed">
                             Built for families across languages. Use Famzy in the language that feels most natural to your home.
                         </p>
-                        <a href="#" class="tw-text-blue-600 dark:tw-text-blue-400 tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
+                        <a href="#" class="tw-text-[#dc143c] dark:tw-text-[#dc143c] tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
                             Learn more <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -826,7 +692,7 @@
                         <p class="tw-text-gray-700 dark:tw-text-gray-100 tw-text-base tw-leading-relaxed">
                             Pick up where you left off. Find past messages, decisions, and shared moments without digging or confusion.
                         </p>
-                        <a href="#" class="tw-text-blue-600 dark:tw-text-blue-400 tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
+                        <a href="#" class="tw-text-[#dc143c] dark:tw-text-[#dc143c] tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
                             Learn more <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -842,7 +708,7 @@
                         <p class="tw-text-gray-700 dark:tw-text-gray-100 tw-text-base tw-leading-relaxed">
                             Your family’s data stays yours. Simple, transparent privacy settings - no ads, no selling, no surprises.
                         </p>
-                        <a href="#" class="tw-text-blue-600 dark:tw-text-blue-400 tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
+                        <a href="#" class="tw-text-[#dc143c] dark:tw-text-[#dc143c] tw-font-medium tw-flex tw-items-center tw-gap-2 tw-mt-2">
                             Learn more <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -1156,9 +1022,9 @@
             class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-8 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] 
                     tw-text-black dark:tw-text-white max-md:tw-flex-col"
         >
-            <div class="tw-flex max-md:tw-flex-col max-md:tw-gap-0 tw-gap-3 tw-w-full tw-justify-between">
+            <div class="tw-flex max-md:tw-flex-col max-md:tw-gap-0 tw-gap-3 tw-w-full tw-justify-between footer-row">
                 <div
-                    class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+                    class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full footer-brand"
                 >
                     <a href="#" class="tw-w-full tw-place-items-center tw-flex tw-flex-col tw-gap-3">
                         <div class="header-logo footer-logo">
@@ -1178,7 +1044,7 @@
                         </div>
                     </a>
                     <!-- <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us</div> -->
-                    <div class="tw-flex tw-gap-4 tw-text-lg">
+                    <div class="tw-flex tw-gap-4 tw-text-lg footer-social">
                         <a
                             href="https://www.instagram.com/"
                             aria-label="Instagram"
@@ -1202,7 +1068,7 @@
 
                 </div>
 
-                <div class="tw-flex max-md:tw-flex-col tw-flex-wrap tw-gap-3 tw-h-full tw-justify-end tw-ml-auto">
+                <div class="tw-flex max-md:tw-flex-col tw-flex-wrap tw-gap-3 tw-h-full tw-justify-end tw-ml-auto footer-columns">
                     <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4">
                         <h2 class="tw-text-lg tw-font-semibold">Product</h2>
                         <div class="tw-flex tw-flex-col tw-gap-3">
@@ -1239,6 +1105,58 @@
                             <a href="#" class="footer-link">Content Takedown</a>
                         </div>
                     </div>
+                </div>
+
+                <!-- Mobile footer accordion -->
+                <div class="footer-accordion tw-hidden max-md:tw-flex tw-w-full tw-flex-col tw-gap-4 tw-mt-2">
+                    <details open class="footer-accordion-item">
+                        <summary class="footer-accordion-summary">
+                            <span>Product</span>
+                            <i class="bi bi-chevron-down footer-accordion-icon"></i>
+                        </summary>
+                        <div class="tw-flex tw-flex-col tw-gap-3 tw-pl-1 footer-accordion-links">
+                            <a href="#" class="footer-link">Features</a>
+                            <a href="#" class="footer-link">Privacy &amp; Security</a>
+                            <a href="#" class="footer-link">Supported Platforms</a>
+                            <a href="#" class="footer-link">Download the App</a>
+                        </div>
+                    </details>
+
+                    <details class="footer-accordion-item">
+                        <summary class="footer-accordion-summary">
+                            <span>Support</span>
+                            <i class="bi bi-chevron-down footer-accordion-icon"></i>
+                        </summary>
+                        <div class="tw-flex tw-flex-col tw-gap-3 tw-pl-1 footer-accordion-links">
+                            <a href="#" class="footer-link">Help Centre</a>
+                            <a href="mailto:support@famzy.ai" class="footer-link">Contact Support</a>
+                            <a href="#" class="footer-link">FAQs</a>
+                        </div>
+                    </details>
+
+                    <details class="footer-accordion-item">
+                        <summary class="footer-accordion-summary">
+                            <span>Company</span>
+                            <i class="bi bi-chevron-down footer-accordion-icon"></i>
+                        </summary>
+                        <div class="tw-flex tw-flex-col tw-gap-3 tw-pl-1 footer-accordion-links">
+                            <a href="#" class="footer-link">About Famzy</a>
+                            <a href="#" class="footer-link">Careers</a>
+                        </div>
+                    </details>
+
+                    <details class="footer-accordion-item">
+                        <summary class="footer-accordion-summary">
+                            <span>Legal</span>
+                            <i class="bi bi-chevron-down footer-accordion-icon"></i>
+                        </summary>
+                        <div class="tw-flex tw-flex-col tw-gap-3 tw-pl-1 footer-accordion-links">
+                            <a href="#" class="footer-link">Terms of Service</a>
+                            <a href="#" class="footer-link">Privacy Policy</a>
+                            <a href="#" class="footer-link">Data &amp; Safety</a>
+                            <a href="#" class="footer-link">Content Takedown</a>
+                        </div>
+                    </details>
                 </div>
             </div>
 
